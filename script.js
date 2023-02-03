@@ -23,7 +23,7 @@ const answers = [
   "Sinais apontam que sim.",
 ];
 
-// clicar em fazer pergunta || click "ask question"
+// click "ask question"
 function askQuestion() {
   if (inputQuestion.value == "") {
     alert("Digite sua pergunta");
@@ -34,16 +34,15 @@ function askQuestion() {
 
   const question = "<div>" + inputQuestion.value + "</div>";
 
-  // gerar número aleatório || for random number
+  // random number
   const totalAnswers = answers.length;
   const numRandom = Math.floor(Math.random() * totalAnswers);
 
-  // innerHTML vai inserir no DOM a resposta aleatória || inserts random answer in the DOM
   elementAnswer.innerHTML = question + answers[numRandom];
 
   elementAnswer.style.opacity = 1;
 
-  // sumir respostas após 3 segundos || answer vanishes after 3 sec
+  // answer vanishes after 3 sec
   setTimeout(function () {
     elementAnswer.style.opacity = 0;
     buttonAsk.removeAttribute("disabled");
